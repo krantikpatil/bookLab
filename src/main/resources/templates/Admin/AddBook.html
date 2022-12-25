@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="Index::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Book Page</title>
+
+</head>
+<body>
+<section>
+
+<div class="card mr-5">
+<div class="card-body">
+
+<div class="container">
+<div class="card-header text-center"><h2>Add Book</h2></div>
+<div class="row">
+<div class="col-md-8 offset-md-2">
+<form action="" th:action="@{/addBookData}" method="post" enctype="multipart/form-data" th:object="${addBookObject}">
+
+  <div class="mb-3 mt-5">
+    <label for="exampleInputEmail1" class="form-label"> Name </label> 
+       <input type="text" class="form-control" name="name" placeholder="Name Of Book" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+ 
+  
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label"> Category </label>
+    <select  class="form-control" name="category" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <option selected  class="form-control"> Name of Category </option>
+  <option value="Spiritual"  class="form-control">Spiritual</option>
+  <option value="Historical"  class="form-control">Historical</option>
+  <option value="Stories"  class="form-control">Stories</option>
+  <option value="Business"  class="form-control">Business</option>
+  
+    </select>
+  </div>
+ 
+ <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label"> Author </label>
+    <input type="text" class="form-control" name="author" placeholder="Name Of Author" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label"> Price </label>
+    <input type="text" class="form-control" name="price" placeholder="Price Of Book" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label"> Summary </label>
+    <input type="text" class="form-control" name="sumary" placeholder="Summary Of Book" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+       <label> Select Image </label> 
+   <div class="form-control mb-5">
+    <input type="file"  name="profileImage" placeholder="Upload file"/>
+    </div>
+<div class="text-center">
+  <button type="submit" class="btn btn-outline-primary">Submit</button>
+  <button type="reset" class="btn btn-outline-primary">Reset</button>
+</div>
+<div class="mt-3 text-center" style="color:green">
+<p th:text="${massage}"></p>
+</div>
+
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+</section>
+</body>
+</html>
